@@ -3618,7 +3618,7 @@ No part of this file may be used without permission.
 
 						{
 
-							title: 'Type', name: 'wan' + u + '_proto', type: 'select', options: [ [ 'dhcp', '动态IP' ], [ 'static', '静态IP' ], [ 'pppoe', '宽带拨号' ], [ 'pptp', 'PPTP客户端' ], [ 'l2tp', 'L2TP客户端' ],
+							title: '类型', name: 'wan' + u + '_proto', type: 'select', options: [ [ 'dhcp', '动态IP' ], [ 'static', '静态IP' ], [ 'pppoe', '宽带拨号' ], [ 'pptp', 'PPTP客户端' ], [ 'l2tp', 'L2TP客户端' ],
 
 							/* LINUX26-BEGIN */
 
