@@ -177,7 +177,7 @@ var fields = {
         }
         return a;
     },
-    disableAll: function(e, d) {
+    All: function(e, d) {
 
         var i;
 
@@ -2111,10 +2111,10 @@ function genStdTimeList(id, zero, min) {
             v = t[i];
             if (v < min) continue;
             b.push('<option value=' + v + '>');
-            if (v == 60) b.push('1 minute');
-            else if (v > 60) b.push((v / 60) + ' minutes');
-            else if (v == 1) b.push('1 second');
-            else b.push(v + ' seconds');
+            if (v == 60) b.push('1 分钟');
+            else if (v > 60) b.push((v / 60) + ' 分钟');
+            else if (v == 1) b.push('1 秒');
+            else b.push(v + ' 秒');
         }
         b.push('</select> ');
     }
