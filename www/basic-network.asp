@@ -3558,7 +3558,7 @@ No part of this file may be used without permission.
 
 							/* MULTIWAN-END */
 
-						], value : nvram.mwan_num, suffix: ' <small>请先设置 <a href="/#advanced-vlan.asp">VLAN</a> first</small>'
+						], value : nvram.mwan_num, suffix: ' <small>请先设置 <a href="/#advanced-vlan.asp">VLAN</a></small>'
 
 						},
 
