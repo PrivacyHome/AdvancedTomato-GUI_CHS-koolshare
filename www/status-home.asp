@@ -296,7 +296,7 @@
                 <script type="text/javascript">
                     var a = (nvstat.size - nvstat.free) / nvstat.size * 100.0;
                     createFieldTable('', [{
-                        title: '固件名称',
+                        title: '路由名称',
                         text: nvram.router_name
                     },
                     {
