@@ -692,7 +692,8 @@
                 html += '<a class="btn" onclick="updateStatus(\'subnets\')" id="subnets">子网</a>';
                 html += '<a class="btn" onclick="updateStatus(\'connections\')" id="connections">连接</a>';
                 html += '<a class="btn" onclick="updateStatus(\'nodes\')" id="nodes">节点</a>';
-                html += '</div>'html += '<div style="visibility:hidden;text-align:right" id="statusWait">Please wait... <div class="spinner"></div></div>';
+                html += '</div>';
+		html += '<div style="visibility:hidden;text-align:right" id="statusWait">Please wait... <div class="spinner"></div></div>';
                 html += '<input class="btn btn-primary" type="button" value="信息" onclick="updateStatus(\'info\')" id="info">';
                 html += '<select id="hostselect" style="width:170px"></select>';
                 html += '<pre id="result"></pre>';
