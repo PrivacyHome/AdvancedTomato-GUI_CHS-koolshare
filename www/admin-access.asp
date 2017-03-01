@@ -300,7 +300,7 @@ No part of this file may be used without permission.
 		</div>
 
 		<div class="box" id="section-telnet" data-box="access-telnet">
-			<div class="heading">Telnet Daemon <span class="telnet-status"></span></div>
+			<div class="heading">Telnet 服务 <span class="telnet-status"></span></div>
 			<div class="content">
 				<script type="text/javascript">
 					$('#section-telnet .content').forms([
@@ -309,7 +309,7 @@ No part of this file may be used without permission.
 					]);
 					$('#section-telnet .heading').append('<a href="#" data-toggle="tooltip" class="pull-right" title="' + (tdup ? '停止' : '启动') + ' Telnet 服务" onclick="toggle(\'telnetd\', tdup)" id="_telnetd_button">'
 						+ (tdup ? '<i class="icon-stop"></i>' : '<i class="icon-play"></i>') + '</a>');
-					$('.telnet-status').html((tdup ? '<small style="color: green;">(Running)</small>' : '<small style="color: red;">(Stopped)</small>'));
+					$('.telnet-status').html((tdup ? '<small style="color: green;">(运行中)</small>' : '<small style="color: red;">(未运行)</small>'));
 				</script>
 			</div>
 		</div>
