@@ -177,7 +177,7 @@ var fields = {
         }
         return a;
     },
-    All: function(e, d) {
+    disableAll: function(e, d) {
 
         var i;
 
