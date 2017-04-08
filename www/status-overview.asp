@@ -86,7 +86,7 @@
 								C8.6,1.6,7.9,5,14.1,5.4z"/>
 						</svg>
 
-						<h1 class="nav-collapse-hide">Advanced<span> Tomato</span></h1>
+						<h1 class="nav-collapse-hide">KoolShare<span> Tomato</span></h1>
 						<h2 class="currentpage nav-collapse-hide">加载中...</h2>
 
 					</div>

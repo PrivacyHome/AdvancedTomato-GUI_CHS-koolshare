@@ -30,7 +30,7 @@ No part of this file may be used without permission.
 		// {enable}|{begin_mins}|{end_mins}|{dow}|{comp[<comp]}|{rules<rules[...]>}|{http[ ...]}|{http_file}|{desc}
 		//	<% rrule(); %>
 		if ((rule = rrule.match(/^(\d+)\|(-?\d+)\|(-?\d+)\|(\d+)\|(.*?)\|(.*?)\|([^|]*?)\|(\d+)\|(.*)$/m)) == null) {
-			rule = ['', 1, 1380, 240, 31, '', '', '', 0, '新规则 ' + (rruleN + 1)];
+			rule = ['', 1, 1380, 240, 31, '', '', '', 0, 'New ' + (rruleN + 1)];
 		}
 		rule[2] *= 1;
 		rule[3] *= 1;
@@ -51,7 +51,7 @@ No part of this file may be used without permission.
 			/* LINUX26-END */
 		];
 
-		var dowNames = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+		var dowNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 		//
 

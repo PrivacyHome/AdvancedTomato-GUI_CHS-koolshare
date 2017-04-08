@@ -2,7 +2,6 @@
 Tomato GUI
 Copyright (C) 2006-2010 Jonathan Zarate
 http://www.polarcloud.com/tomato/
-
 For use with Tomato Firmware only.
 No part of this file may be used without permission.
 */
@@ -1146,13 +1145,13 @@ function cmpIP(a, b) {
 }
 
 /**
- * 
+ *
  * @param a		Text1
  * @param b		Text2
  * @returns		-1 if a < b
  * 				 0 if a = b
  * 				 1 if a > b
- *  
+ *
  */
 function cmpText(a, b) {
     if (a == '') a = '\xff';
@@ -1352,7 +1351,8 @@ TomatoGrid.prototype = {
             n += 3;
         }
         if (me.canDelete) {
-            s += '<a class="delete-row" href="#" onclick="this.parentNode.tgo.rpDel(this.parentNode.ref); return false;" title="删除"><i class="icon-cancel"></i></a>'; ++n;
+            s += '<a class="delete-row" href="#" onclick="this.parentNode.tgo.rpDel(this.parentNode.ref); return false;" title="删除"><i class="icon-cancel"></i></a>';
+						++n;
         }
         x = PR(evt.target);
         x = x.cells[x.cells.length - 1];
@@ -1576,7 +1576,9 @@ TomatoGrid.prototype = {
         c = r.insertCell(0);
         c.colSpan = this.header.cells.length;
         if (which == 'edit') {
-            c.innerHTML = '<button type="button" class="btn btn-danger" value="Delete" onclick="TGO(this).onDelete()">删除 <i class="icon-cancel"></i></button> ' + '<button type="button" class="btn" value="Cancel" onclick="TGO(this).onCancel()">取消 <i class="icon-disable"></i></button> ' + '<button type="button" class="btn btn-primary" value="OK" onclick="TGO(this).onOK()">确定 <i class="icon-check"></i></button>';
+            c.innerHTML = '<button type="button" class="btn btn-danger" value="Delete" onclick="TGO(this).onDelete()">删除 <i class="icon-cancel"></i></button> ' +
+						'<button type="button" class="btn" value="Cancel" onclick="TGO(this).onCancel()">取消 <i class="icon-disable"></i></button> ' +
+						'<button type="button" class="btn btn-primary" value="OK" onclick="TGO(this).onOK()">确定 <i class="icon-check"></i></button>';
         } else {
             c.innerHTML = '<button type="button" class="btn btn-danger" value="Add" onclick="TGO(this).onAdd()">添加 <i class="icon-plus"></i></button>';
         }
@@ -1713,12 +1715,12 @@ TomatoGrid.prototype = {
 
     /**
 	 * @brief	Sortcompare function for rows of a datagrid
-	 * @details	Because rows can't be compared, the function gets the 
+	 * @details	Because rows can't be compared, the function gets the
 	 * 			columnindex of the column that has to be sorted.
 	 * 			Than the columndata is compared. According to the sorting
-	 * 			(Ascending, Descending) the resultvalue is negated. 
-	 * 			
-	 * 			This function is often overiden for a specific grid. 
+	 * 			(Ascending, Descending) the resultvalue is negated.
+	 *
+	 * 			This function is often overiden for a specific grid.
 	 */
     sortCompare: function(a, b) {
         // Get the gridobject for the row that is being compared.
@@ -1733,8 +1735,8 @@ TomatoGrid.prototype = {
     },
 
     /**
-	 * @brief	Sort the table. 
-	 * @details	Sort function sets the table header accordingly and calls 
+	 * @brief	Sort the table.
+	 * @details	Sort function sets the table header accordingly and calls
 	 * 			member function 'resort' on the gird.
 	 */
     sort: function(column) {
@@ -1767,19 +1769,19 @@ TomatoGrid.prototype = {
         var i, j, max, e, p;
         var top;
 
-        // ?Stop the row moving state 
+        // ?Stop the row moving state
         this.moving = null;
 
         // Set top to the index of the first data row
         top = this.header ? this.header.rowIndex + 1 : 0;
-        // Set max to the index of the last data row   
+        // Set max to the index of the last data row
         max = this.footer ? this.footer.rowIndex: this.tb.rows.length;
 
         // create a copy of the datarows of the gird in the array a
         for (i = top; i < max; ++i) a.push(p.rows[i]);
 
         // Sort the newly created copy with a compare function.
-        // The compare function is the compare function defined for the grid being sorted. 
+        // The compare function is the compare function defined for the grid being sorted.
         a.sort(THIS(this, this.sortCompare));
 
         // Empty the grid and fill it with the sorted rows
@@ -2329,14 +2331,11 @@ function navi_icons($name) {
     case '网页服务':
         return 'cloud';
         break;
-    case 'VPN服务器':
+    case 'VPN服务':
         return 'globe';
         break;
     case '系统管理':
         return 'wrench';
-        break;
-    case '软件中心':
-        return 'tools';
         break;
     default:
         return 'plus';
@@ -2381,7 +2380,7 @@ function navi() {
             "路由": "advanced-routing.asp",
             "策略路由": "advanced-pbr.asp",
             /* TOR-BEGIN */
-            "Tor项目": "advanced-tor.asp",
+            "Tor设置": "advanced-tor.asp",
             /* TOR-END */
             "无线设置": "advanced-wireless.asp",
             "VLAN设置": "advanced-vlan.asp",
@@ -2408,7 +2407,7 @@ function navi() {
         /* USB-BEGIN */
         // ---- !!TB - USB, FTP, Samba, Media Server
         'USB和NAS': {
-            "文件共享": "nas-samba.asp"
+            "USB支持": "nas-usb.asp"
             /* SAMBA-BEGIN */
             ,
             "文件共享": "nas-samba.asp"
@@ -2439,7 +2438,7 @@ function navi() {
         /* NGINX-END */
         /* USB-END */
         /* VPN-BEGIN */
-        'VPN服务器': {
+        'VPN服务': {
             /* OPENVPN-BEGIN */
             "OpenVPN服务器": "vpn-server.asp",
             "OpenVPN客户端": "vpn-client.asp",
@@ -2450,7 +2449,7 @@ function navi() {
             "PPTP客户端": "vpn-pptp.asp",
             /* PPTPD-END */
             /* TINC-BEGIN */
-            "TincVPN": "vpn-tinc.asp"
+            "Tinc服务": "vpn-tinc.asp"
             /* TINC-END */
         },
         /* VPN-END */
@@ -2481,9 +2480,6 @@ function navi() {
             "SNMP": "admin-snmp.asp",
             /* SNMP-END */
             "升级": "admin-upgrade.asp"
-        },
-        "软件中心": {
-            "插件市场": "soft-center.asp"
         }
     };
 
@@ -2507,7 +2503,7 @@ function navi() {
         // Fix that will not fail navigation in case of invalid object configuration
         if (typeof(linksobj) !== 'object') {
 
-            console.log("导航配置错误！参数 \"" + key + "\" 的类型是 \"" + typeof(linksobj) + "\" 而不是 OBJECT!");
+            console.log("导航配置错误。参数不正确！");
             return;
 
         }

@@ -57,11 +57,11 @@ No part of this file may be used without permission.
 				<div id="form-fields"></div><hr>
 				<script type="text/javascript">
 					a = [];
-					for (i = 3; i <= 20; ++i) a.push([i, i + ' seconds']);
+					for (i = 3; i <= 20; ++i) a.push([i, i + ' 秒']);
 
 					$('#form-fields').forms([
 						{ title: '引导等待时间 *', name: 'wait_time', type: 'select', options: a, value: fixInt(nvram.wait_time, 3, 20, 3) },
-						{ title: 'WAN端口速度 *', name: 'wan_speed', type: 'select', options: [[0,'10Mb Full'],[1,'10Mb Half'],[2,'100Mb Full'],[3,'100Mb Half'],[4,'Auto']], value: nvram.wan_speed },
+						{ title: 'WAN端口速度 *', name: 'wan_speed', type: 'select', options: [[0,'10Mb Full'],[1,'10Mb Half'],[2,'100Mb Full'],[3,'100Mb Half'],[4,'自动']], value: nvram.wan_speed },
 						null,
 
 						/* CTF-BEGIN */
@@ -71,7 +71,7 @@ No part of this file may be used without permission.
 
 						{ title: '启用巨型帧 *', name: 'f_jumbo_frame_enable', type: 'checkbox', value: nvram.jumbo_frame_enable != '0', hidden: !et1000 },
 						{ title: '巨型帧尺寸 *', name: 'jumbo_frame_size', type: 'text', maxlen: 4, size: 6, value: fixInt(nvram.jumbo_frame_size, 1, 9720, 2000),
-							suffix: ' <small>Bytes (范围: 1 - 9720; 默认: 2000)</small>', hidden: !et1000 }
+							suffix: ' <small>字节 (范围: 1 - 9720; 默认: 2000)</small>', hidden: !et1000 }
 
 					]);
 				</script>

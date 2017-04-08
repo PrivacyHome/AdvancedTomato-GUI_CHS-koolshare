@@ -237,7 +237,7 @@ No part of this file may be used without permission.
 						{ title: '远程访问', name: 'f_http_remote', type: 'select', options: [[0,'禁用'],[1,'HTTP'],[2,'HTTPS']],
 							value:  (nvram.remote_management == 1) ? ((nvram.remote_mgt_https == 1) ? 2 : 1) : 0 },
 						{ title: '端口', indent: 2, name: 'http_wanport', type: 'text', maxlen: 5, size: 7, value:  fixPort(nvram.http_wanport, 8080) },
-						{ title: '运行无线访问', name: 'f_http_wireless', type: 'checkbox', value:  nvram.web_wl_filter == 0 },
+						{ title: '允许无线访问', name: 'f_http_wireless', type: 'checkbox', value:  nvram.web_wl_filter == 0 },
 						{ title: '<h5>用户界面设置</h5>' },
 						{ title: '界面主题', name: 'web_css', type: 'select', help: 'AdvancedTomato很少建立皮肤,通过这种方式我们可以节省路由器空间并添加更重要的功能。',
 							options: [['tomato','默认'],
@@ -300,7 +300,7 @@ No part of this file may be used without permission.
 		</div>
 
 		<div class="box" id="section-telnet" data-box="access-telnet">
-			<div class="heading">Telnet 服务 <span class="telnet-status"></span></div>
+			<div class="heading">Telnet 服务<span class="telnet-status"></span></div>
 			<div class="content">
 				<script type="text/javascript">
 					$('#section-telnet .content').forms([

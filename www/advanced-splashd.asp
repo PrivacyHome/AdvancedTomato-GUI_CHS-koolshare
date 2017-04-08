@@ -118,7 +118,7 @@ No part of this file may be used without permission.
 					$('#cat-configure').forms([
 						{ title: '启用功能', name: 'f_NC_enable', type: 'checkbox', value: nvram.NC_enable == '1' },
 						/* VLAN-BEGIN */
-						{ title: 'Interface', multi: [
+						{ title: '接口', multi: [
 							{ name: 'NC_BridgeLAN', type: 'select', options: [
 								['br0','LAN (br0)*'],
 								['br1','LAN1 (br1)'],

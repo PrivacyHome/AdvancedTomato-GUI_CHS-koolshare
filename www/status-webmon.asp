@@ -245,8 +245,8 @@ No part of this file may be used without permission.
 						e.value = e.value.substr(0, maxl) + '...';
 				}
 				dt.setTime(e.time * 1000);
-				var row = this.insert(-1, e, [dt.toDateString() + ', ' + dt.toLocaleTimeString(),
-					e.ip, e.value], false);
+				//var row = this.insert(-1, e, [dt.toDateString() + ', ' + dt.toLocaleTimeString(),e.ip, e.value], false);
+				var row = this.insert(-1, e, [dt.toLocaleString(),e.ip, e.value], false);
 				if (cursor) row.style.cursor = cursor;
 			}
 

@@ -150,7 +150,7 @@
                 if ($v == 'DOWN') {
 
                     status = 'off';
-                    speed = etherstates[$k].replace("DOWN", "断开");
+                    speed = etherstates[$k].replace("DOWN", "拔出");
 
                 } else {
 
@@ -197,7 +197,7 @@
                 c('wan' + u + 'gateway', stats.wangateway[uidx - 1]);
                 c('wan' + u + 'dns', stats.dns[uidx - 1]);
                 c('wan' + u + 'uptime', stats.wanuptime[uidx - 1]);
-                c('wan' + u + 'status', ((stats.wanstatus[uidx - 1] == 'Connected') ? '<span class="text-green">已连接</span>': '<span class="text-red">' + stats.wanstatus[uidx - 1] + '</span>'));
+                c('wan' + u + 'status', ((stats.wanstatus[uidx - 1] == 'Connected') ? '<span class="text-green">Connected</span>': '<span class="text-red">' + stats.wanstatus[ uidx - 1 ] + '</span>'));
                 if (show_dhcpc[uidx - 1]) c('wan' + u + 'lease', stats.wanlease[uidx - 1]);
                 if (show_dhcpc[uidx - 1]) c('wan' + u + 'lease', stats.wanlease[uidx - 1]);
                 if (show_codi) {
@@ -384,7 +384,7 @@
                         'pppoe': '宽带拨号',
                         'pptp': 'PPTP客户端',
                         'l2tp': 'L2TP客户端',
-                        '3G拨号': '3G猫',
+                        'ppp3g': '3G猫',
                         'lte': '4G/LTE'
                     } [nvram['wan' + u + '_proto']] || '-'
                 },
@@ -442,7 +442,7 @@
         <div class="box" id="ethernetPorts" data-box="home_ethports">
             <div class="heading">
                 以太网口状态
-                <a class="ajaxload pull-right" data-toggle="tooltip" title="Configure Settings"
+                <a class="ajaxload pull-right" title="设置"
                 href="#basic-network.asp">
                     <i class="icon-system">
                     </i>
@@ -583,7 +583,7 @@
                     text: wlstats[uidx].ifstatus
                 },
                 {
-                    title: '无线电',
+                    title: '无线状态',
                     rid: 'radio' + uidx,
                     text: (wlstats[uidx].radio == 0) ? '禁用 <i class="icon-cancel"></i>': '启用 <i class="icon-check"></i>',
                     ignore: (wl_sunit(uidx) >= 0)
@@ -596,12 +596,12 @@
                     text: nvram['wl' + u + '_ssid']
                 },
                 {
-                    title: '广播',
+                    title: '广播SSID',
                     text: (nvram['wl' + u + '_closed'] == 0) ? '<span class="text-green">启用 <i class="icon-check"></i></span>': '<span class="text-red">禁用 <i class="icon-cancel"></i></span>',
                     ignore: (nvram['wl' + u + '_mode'] != 'ap')
                 },
                 {
-                    title: '安全模式',
+                    title: '加密方式',
                     text: sec
                 },
                 {
@@ -660,3 +660,4 @@
         earlyInit();
     </script>
 </content>
+

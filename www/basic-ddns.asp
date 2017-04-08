@@ -294,7 +294,7 @@ permission. -->
                     a = (s != '') && (s != 'wan') && (s != 'wan2') && (s != 'wan3') && (s != 'wan4') && (s.indexOf('@') != 0) && (s != '0.0.0.0') && (s != '1.1.1.1') && (s != '10.1.1.1');
 
                     $('#ddnsconf').forms([{
-                        title: 'IP address',
+                        title: 'IP地址',
                         name: 'f_ddnsx_ip',
                         type: 'select',
                         options: [['wan', '使用WAN1 IP地址 ' + ddnsx_ip + ' (推荐)'], ['wan2', '使用WAN2 IP地址 ' + ddnsx2_ip], ['wan3', '使用WAN3 IP地址 ' + ddnsx3_ip], ['wan4', '使用WAN4 IP地址 ' + ddnsx4_ip], ['@', '使用外部IP地址检查 (每 10 分钟)'], ['0.0.0.0', '离线 (0.0.0.0)'], ['1.1.1.1', '离线 (1.1.1.1)'], ['10.1.1.1', '离线 (10.1.1.1)'], ['custom', '自定义IP地址...']],
@@ -364,7 +364,7 @@ permission. -->
                         if (u.length != 2) u = ['', ''];
                         h = (v[0] == '');
 
-                        $('#ddnsconf').append('<br><h5>Dynamic DNS ' + (i + 1) + '</h5><br>');
+                        $('#ddnsconf').append('<br><h5>动态DNS ' + (i + 1) + '</h5><br>');
                         $('#ddnsconf').forms([{
                             title: '服务商',
                             name: 'f_service' + i,
@@ -380,7 +380,7 @@ permission. -->
                         },
                         {
                             title: '&nbsp;',
-                            text: '<small>* This service determines the IP address using its own method.</small>',
+                            text: '<small>* 此服务使用自己的方法确定IP地址。</small>',
                             hidden: 1,
                             rid: 'row_z' + i
                         },

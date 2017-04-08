@@ -1438,7 +1438,7 @@ tabs = [['overview', '概述']];
 
 					var f = [];
 					f.push (
-						{ title: '启用接口', name: 'f_wl'+u+'_radio', type: 'checkbox',
+						{ title: '启用', name: 'f_wl'+u+'_radio', type: 'checkbox',
 						value: (eval('nvram["wl'+u+'_radio"]') == '1') && (eval('nvram["wl'+u+'_net_mode"]') != 'disabled') },
 						{ title: 'MAC地址', text: '<a href="#advanced-mac.asp">' + (eval('nvram["wl'+u+'_hwaddr"]') || '00:00:00:00:00:00') + '</a>' +
 						' &nbsp; <b id="wl'+u+'_hwaddr_msg" style="visibility:hidden"><small>(注意: 无线网卡驱动提供的BSSID <a href=#advanced-mac.asp>' + ((typeof(wl_ifaces[wl_ifidxx(u)]) != 'undefined')? wl_ifaces[wl_ifidxx(u)][9] : '') + '</a>)</small></b>' },
@@ -1464,7 +1464,7 @@ tabs = [['overview', '概述']];
 
 					f.push (
 						{ title: 'SSID', name: 'wl'+u+'_ssid', type: 'text', maxlen: 32, size: 34, value: eval('nvram["wl'+u+'_ssid"]') },
-						{ title: '广播', indent: 2, name: 'f_wl'+u+'_bcast', type: 'checkbox', value: (eval('nvram["wl'+u+'_closed"]') == '0') }
+						{ title: '广播SSID', indent: 2, name: 'f_wl'+u+'_bcast', type: 'checkbox', value: (eval('nvram["wl'+u+'_closed"]') == '0') }
 					);
 
 					// only if primary VIF
@@ -1484,10 +1484,10 @@ tabs = [['overview', '概述']];
 						nvram['wl'+u+'_crypto'] = 'aes';
 
 					f.push (
-						{ title: '安全', name: 'wl'+u+'_security_mode', type: 'select',
+						{ title: '加密方式', name: 'wl'+u+'_security_mode', type: 'select',
 						options: [['disabled','禁用'],['wep','WEP'],['wpa_personal','WPA Personal'],['wpa_enterprise','WPA Enterprise'],['wpa2_personal','WPA2 Personal'],['wpa2_enterprise','WPA2 Enterprise'],['wpaX_personal','WPA / WPA2 Personal'],['wpaX_enterprise','WPA / WPA2 Enterprise'],['radius','Radius']],
 						value: eval('nvram["wl'+u+'_security_mode"]') },
-						{ title: '加密方式', indent: 2, name: 'wl'+u+'_crypto', type: 'select',
+						{ title: '加密类型', indent: 2, name: 'wl'+u+'_crypto', type: 'select',
 						options: [['tkip','TKIP'],['aes','AES'],['tkip+aes','TKIP / AES']], value: eval('nvram["wl'+u+'_crypto"]') },
 						{ title: '共享密钥', indent: 2, name: 'wl'+u+'_wpa_psk', type: 'password', maxlen: 64, size: 64, peekaboo: 1,
 						suffix: ' <button class="btn" type="button" id="_f_wl'+u+'_psk_random1" value="Random" onclick="random_psk(\'_wl'+u+'_wpa_psk\')">随机</button>',

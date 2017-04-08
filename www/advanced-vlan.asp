@@ -906,7 +906,7 @@
 		</div>
 
 		<div id="sesdiv" class="box" style="display:none">
-			<div class="heading">VLAN Settings</div>
+			<div class="heading">VLAN设置</div>
 			<div class="content">
 				<table class="line-table" id="vlan-grid"></table><br />
 

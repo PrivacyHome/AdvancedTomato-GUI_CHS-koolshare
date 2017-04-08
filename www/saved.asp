@@ -11,7 +11,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8">
 		<meta name="robots" content="noindex,nofollow">
-		<title>[<% ident(); %>] 番茄</title>
+		<title>[<% ident(); %>] Advanced Tomato</title>
 		<style>
 			body {
 				font-family: Verdana;
@@ -126,7 +126,7 @@
 		<div id="loader">
 			<script type="text/javascript">
 				if (wait <= 0) s = '更改已保存!<br /><br /> <button onclick="go()" class="btn">继续</button>';
-				else s = '<div class="spinner"></div> 工作中，请稍候...<b>(<span id="xclock" style="visibility:hidden">&nbsp;</span>)</b>';
+				else s = '<div class="spinner"></div> 保存中，请稍候...<b>(<span id="xclock" style="visibility:hidden">&nbsp;</span>)</b>';
 				document.write(s);
 			</script>
 		</div>
